@@ -5,7 +5,7 @@ This repository provides two modular pipelines for evaluating our SOLAR method f
 - **`llm/llm.py`** — Instruction tuning and language generation using LLaMA or GPT-2 models.
 - **`vit/vit.py`** — Few-shot image classification using ViT-based models with LoRA+SOLAR compression.
 
-**SOLAR** applies a randomized subspace projection and sparsity-aware reconstruction to compress LoRA adapters after training — achieving extreme communication and storage efficiency without significant performance loss.
+**SOLAR** applies a randomized subspace projection and sparsity-aware reconstruction to compress PEFT adapters after training — achieving extreme communication and storage efficiency without significant performance loss.
 
 ---
 
@@ -60,7 +60,7 @@ pip install -r requirements.txt
 
 > ✅ Models: GPT-2, LLaMA  
 > ✅ Datasets: Alpaca, E2E NLG, etc.  
-> ✅ Evaluation: BLEU, METEOR, ROUGE-L via Hugging Face `evaluate`  
+> ✅ Evaluation: METEOR via Hugging Face `evaluate`  
 > ✅ Compression Parameters:
 > - `--retain_params`: percentage (e.g., 0.4 = 40% of weights kept)
 > - `--num_random_basis`: number of random basis vectors (e.g. 1000, 4000)
