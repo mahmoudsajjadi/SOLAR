@@ -1,0 +1,20 @@
+# PyTorch + CUDA 12.1
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+torchaudio==2.5.1+cu121
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+# Hugging Face ecosystem
+transformers==4.47.1
+datasets==3.0.1
+evaluate==0.4.3
+peft==0.14.0
+huggingface-hub==0.25.1
+
+# Vision transformer + math
+timm==1.0.15
+scikit-learn==1.5.2
+matplotlib==3.9.2
+
+# Logging and experiment tracking
+wandb==0.18.3
