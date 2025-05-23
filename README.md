@@ -17,7 +17,7 @@ This repository provides two modular pipelines for evaluating our SOLAR method f
 ```python
 # In llm.py:
 login(token='YOUR_WANDB_TOKEN_HERE', add_to_git_credential=False)
-
+```
 
 ---
 
