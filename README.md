@@ -5,7 +5,19 @@ This repository provides two modular pipelines for evaluating our SOLAR method f
 - **`llm/llm.py`** — Instruction tuning and language generation using LLaMA or GPT-2 models.
 - **`vit/vit.py`** — Few-shot image classification using ViT-based models with LoRA+SOLAR compression.
 
-**SOLAR** applies a randomized subspace projection and sparsity-aware reconstruction to compress PEFT adapters after training — achieving extreme communication and storage efficiency without significant performance loss.
+**SOLAR** applies a randomized subspace projection and sparsity-aware reconstruction to compress LoRA adapters after training — achieving extreme communication and storage efficiency without significant performance loss.
+
+
+## 🔧 Configuration Notes
+
+> **Important**:  
+> - **Update model paths** in `MODEL_DATA_CONFIG` inside `llm/llm.py` to match your local or Hugging Face-hosted models.  
+> - **Insert your personal `wandb` token** in the `wandb.login()` call if logging is enabled. For anonymized submissions, remove or comment this out.  
+
+```python
+# In llm.py:
+login(token='YOUR_WANDB_TOKEN_HERE', add_to_git_credential=False)
+
 
 ---
 
@@ -60,7 +72,7 @@ pip install -r requirements.txt
 
 > ✅ Models: GPT-2, LLaMA  
 > ✅ Datasets: Alpaca, E2E NLG, etc.  
-> ✅ Evaluation: METEOR via Hugging Face `evaluate`  
+> ✅ Evaluation: BLEU, METEOR, ROUGE-L via Hugging Face `evaluate`  
 > ✅ Compression Parameters:
 > - `--retain_params`: percentage (e.g., 0.4 = 40% of weights kept)
 > - `--num_random_basis`: number of random basis vectors (e.g. 1000, 4000)
